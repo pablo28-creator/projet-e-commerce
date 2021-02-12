@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+img{
+    padding: 0;
+    width: 100%;
+}
+.container.baniere{
+    margin: 0;
+}
+.title {
+    padding-bottom: 2em;
+}
+ul{ 
+    list-style-type: none;
+}    
+footer a{
+    color:white;
+}
+.couleurBg{
+    background-color: #ececec;
+}
+#birthdate{
+    padding-left: 1em;
+}
+#description p {
+    padding: 1em;
+}
+.btn{
+    margin: 1em;
+    width: 200px;
+    background-color:cornflowerblue;
+    color: white;
+    box-shadow: 2px 2px 2px black ;  
+}
+.product img{
+    height: 50%; 
+}
+span{
+    font-weight: bold;
+}
+.boutonProduit{
+    background-color: cornflowerblue;
+    box-shadow: 3px 3px 3px black;
+    color: white;
+}
+.divisionBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    width: 120px;
+    height: 40px;
+}
+#submit,#btnPanier,#resetBtn{
+    background-color:cornflowerblue;
+    color: white;
+}
