@@ -125,7 +125,8 @@ return false
 }}
 async function getProducts() {                                        // fonction fetch pour récupérer les info du produit en fonction de son url.
   await fetch(`http://localhost:3000/api/teddies/${queryString}`) 
-    .then((resp) => resp.json()) 
+    .then((resp) => resp.json())
+    .catch(alert)  
     .then((teddy) => afficherTeddy(teddy))  
 }
 getProducts()

@@ -53,7 +53,8 @@ function fillPanier(nounours){                                                  
     }                                                                                                   // on crée une dernière vérification des informations rentrées dans le form par l'utilisateur pour éviter tout "problème".
       if(firstName.match(/^([a-zA-Z -]{3,30})$/) && lastName.match(/^([a-zA-Z -]{3,30})$/) && address.match(/^([0-9a-zA-Z -]{3,40})$/) && city.match(/^([a-zA-Z -]{3,30})$/) && email.match(/^[\Wa-zA-Z0-9_-]{2,40}[@][a-zA-Z0-9-]{2,20}[.][a-zA-Z]{2,3}$/)){
         fetch('http://localhost:3000/api/teddies/order', command)                                       
-        .then(res => res.json())                                                                        // on fait la requète avec fetch qui envoie nos infos au serveur.
+        .then(res => res.json())
+        .catch(alert)                                                                         // on fait la requète avec fetch qui envoie nos infos au serveur.
         .then(res => pageAchat(res))                                                                    // on passe la réponse du serveur dans une fonction.  
     }
       else {
@@ -69,7 +70,8 @@ function fillPanier(nounours){                                                  
     }
     async function addPanier() {                                                                         //  Fonction pour récupéré les infos des teddy du serveur.
       await fetch('http://localhost:3000/api/teddies') 
-        .then((response) => response.json()) 
+        .then((response) => response.json())
+        .catch(alert) 
         .then((nounours) => fillPanier(nounours))
     }
     addPanier()

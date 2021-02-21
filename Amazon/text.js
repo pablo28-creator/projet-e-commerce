@@ -26,7 +26,8 @@ function afficherDivAvecNomEtPrixNounours(nounours) {        // fonction pour af
 }
 async function fillProducts() {                                   // fonction fetch pour  récupérer  les infos sur les nounours sur le serveur.
   await fetch('http://localhost:3000/api/teddies') 
-    .then((response) => response.json()) 
+    .then((response) => response.json())
+    .catch(alert)  
     .then((nounours) => afficherDivAvecNomEtPrixNounours(nounours))    
 }
 fillProducts()
