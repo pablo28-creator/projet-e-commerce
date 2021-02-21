@@ -8,6 +8,7 @@ function afficherTeddy (teddy){                                       // fonctio
 
   let photo = document.createElement("img")
   photo.setAttribute("src", teddy.imageUrl)
+  photo.alt = "Photo d'ours en peluche mis en vente"
   photo.classList.add("photo","border","border-dark","border-bottom-0")
   divPresentation.appendChild(photo)
 

@@ -8,6 +8,7 @@ function afficherDivAvecNomEtPrixNounours(nounours) {        // fonction pour af
 
     let pic = document.createElement("img")
     pic.setAttribute("src", elem.imageUrl)
+    pic.alt = `Photo de ${elem.name} un ours en peluche mis en vente`
     pic.classList.add("border","border-dark","border-bottom-0")
     division.appendChild(pic) 
 
