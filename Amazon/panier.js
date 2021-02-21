@@ -61,10 +61,11 @@ function fillPanier(nounours){                                                  
         alert("Rentrez des informations correct SVP")
       }
     }
-    function pageAchat(res){                                                                            // on réucpère le prix total sur la page.
-      let total = document.getElementById("total").textContent
+    function pageAchat(res){   
+      localStorage.clear()                                                                         
+      let total = document.getElementById("total").textContent                                          // on réucpère le prix total sur la page.
       let totalnumber = total.replace( /^\D+/g, '')
-      let command = {"orderId": res.orderId, "total": totalnumber}                                      
+      let command = {"orderId": res.orderId, "total": totalnumber}                                     
       localStorage.setItem("order", JSON.stringify(command))                                            // on stocke la réponse du seveur et notre prix dans le local.
       window.location.href = 'achats.html'                                                              // on redirige l'utilisateur vers la page de confirmation.
     }
