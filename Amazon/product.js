@@ -107,6 +107,10 @@ function afficherTeddy (teddy){                                       // fonctio
     localStorage.setItem(id, JSON.stringify(cart))                                                                            // fonction qui ajoute un tableau d'ojet au local storage avec comme clé l'id du nounours choisit.
   }
   function produitDejaCommande (id){
+    let orderStorage = localStorage.getItem("order")
+    if(orderStorage){
+      localStorage.removeItem("order");
+    }
     let idStorage = localStorage.getItem(id)                                                                                  // on récupère le local S et on utilise une condition pour savoir si il est déjà remplit avec la clé id du nounours.    
     if(idStorage){
       return true

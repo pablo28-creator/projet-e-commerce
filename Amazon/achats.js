@@ -28,7 +28,7 @@ function reset (){                                                              
     resetBtn.innerHTML = "Nouvelle commande"
     reset.appendChild(resetBtn)
     resetBtn.addEventListener("click", () =>{
-      localStorage.clear()
+      localStorage.clear()                                                                                        // on clear le local storage.
       window.location.href = 'index.html'                                                                         // redirige vers la page d'accueil pour une nouvelle commande.
       })
     }

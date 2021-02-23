@@ -62,7 +62,7 @@ function fillPanier(nounours){                                                  
       }
     }
     function pageAchat(res){   
-      localStorage.clear()                                                                         
+      localStorage.clear()                                                                              // on clear le local storage.
       let total = document.getElementById("total").textContent                                          // on réucpère le prix total sur la page.
       let totalnumber = total.replace( /^\D+/g, '')
       let command = {"orderId": res.orderId, "total": totalnumber}                                     
