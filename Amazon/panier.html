@@ -72,28 +72,31 @@
               <h2 class="card-title text-center mb-3">Formulaire :</h2>
               <div class="form-group mb-3">
                 <label for="name">Prénom :</label>
-                <input type="text" class="form-control" placeholder="Ted" id="name" required pattern="[A-Za-z -]{3,30}" aria-describedby="nameHelpBlock">
+                <input type="text" class="form-control" placeholder="Ted" id="name" required minlength="3" maxlength="30" aria-describedby="nameHelpBlock">
                 <small id="nameHelpBlock" class="form-text text-muted">Prénom de 3 à 30 lettres majuscules ou minuscles.</small>
               </div>
               <div class="form-group mb-3">
                 <label for="surname">Nom :</label>
-                <input type="text" class="form-control" placeholder="Dumont" id="surname" required pattern="[A-Za-z -]{3,30}" aria-describedby="surnameHelpBlock">
+                <input type="text" class="form-control" placeholder="Dumont" id="surname" required minlength="3" maxlength="30" aria-describedby="surnameHelpBlock">
                 <small id="surnameHelpBlock" class="form-text text-muted">Nom de famille de 3 à 30 lettres majuscules ou minuscles.</small>
               </div>
               <div class="form-group mb-3">
                 <label for="adresse">Adresse :</label>
-                <input type="text" class="form-control" placeholder="3 rue des champs " id="adresse" required pattern="[0-9A-Za-z -]{3,40}" aria-describedby="adresseHelpBlock">
+                <input type="text" class="form-control" placeholder="3 rue des champs " id="adresse" required minlength="3" maxlength="40" aria-describedby="adresseHelpBlock">
                 <small id="adresseHelpBlock" class="form-text text-muted">Adresse chiffre ou nombre et lettres majuscules ou minuscles maximun 40 caractères.</small>
               </div>
               <div class="form-group mb-3">
-                <label for="city">Ville :</label>
-                <input type="text" class="form-control" placeholder="Paris"  id="city" required pattern="[A-Za-z -]{3,30}" aria-describedby="CityHelpBlock">
+                <label for="text">Ville :</label>
+                <input type="text" class="form-control" placeholder="Paris"  id="city" required minlength="3" maxlength="30" aria-describedby="CityHelpBlock">
                 <small id="CityHelpBlock" class="form-text text-muted">Nom de ville de 3 à 30 lettres majuscules ou minuscles.</small>
+              </div>
+              <div>
+                <p id="demo"></p>
               </div>
               <div class="form-group mb-3" id="formEnd">
                 <label for="mail">Adresse mail :</label>
-                <input type="text" class="form-control" placeholder="teddy@gmail.com" id="mail" required pattern="[\Wa-zA-Z0-9_-]{2,40}[@][a-zA-Z0-9-]{2,20}[.][a-zA-Z]{2,3}" maxlength="60" aria-describedby="mailHelpBlock">
-                <small id="mailHelpBlock" class="form-text text-muted">Doit contenir une adresse mail, maximum 60 caractères.</small>
+                <input type="email" class="form-control" placeholder="teddy@gmail.com" id="mail" required minlength="10" maxlength="70" aria-describedby="mailHelpBlock">
+                <small id="mailHelpBlock" class="form-text text-muted">Doit contenir une adresse mail, maximum 70 caractères.</small>
               </div>
           </div>
           </div>
@@ -115,7 +118,6 @@
                 </div>
               </div>
             </div>
-        </footer>
-         
+        </footer>     
     </body>
 </html>
