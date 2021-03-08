@@ -20,7 +20,7 @@ function afficherTeddy (teddy){                                       // fonctio
   divPresentation.appendChild(photo);
 
   createlement("h2",...["border", "border-dark","border-top-0",], divPresentation, teddy.name)
-  
+
   let divInformation = document.createElement("div");
   divInformation.classList.add("col-12","col-xl-6");
   teddyName.appendChild(divInformation);
@@ -30,7 +30,7 @@ function afficherTeddy (teddy){                                       // fonctio
   divInformation.appendChild(divBorder);
 
   
-  createlement("h3",...["p-3","text-center","text"], divBorder,"Information :");
+  createlement("h3",...["p-3","text-center","titre"], divBorder,"Information :");
   createlement("p",...["p-3","m-3","text"], divBorder,`<span>Description :</span> ${teddy.description}`);
   createlement("p",...["p-3","m-3","text"], divBorder,`<span>Prix :</span> ${teddy.price/100}€`);
   createlement("p",...["p-3","m-3","text"], divBorder,`<span>Couleurs au choix :</span>`);
@@ -61,7 +61,7 @@ function afficherTeddy (teddy){                                       // fonctio
     let product = {id: id, quantity: 1};
     let cart = [product];
     if(itemStorage){                                        
-    if(produitDejaCommande(id) == true){     
+    if(produitDejaCommande(id) == true){                                            // Condition : si produit dans local, on récupère le produit et on ajoute 1 à la quantité.
       let store = localStorage.getItem("ours");
       store = JSON.parse(store);
       for(let el of store){                                                                                                
@@ -72,19 +72,19 @@ function afficherTeddy (teddy){                                       // fonctio
       localStorage.setItem("ours", JSON.stringify(store));                                                                
     }
     else {
-      let store = JSON.parse(localStorage.getItem("ours"));                          
+      let store = JSON.parse(localStorage.getItem("ours"));                       // Sinon on ajoute le nouveau produit dans le tableau du local                    
       store.push(product);                                                                                                 
       localStorage.setItem("ours", JSON.stringify(store));                                                                           
     }}
     else{
-    populateStorage(cart);
+    populateStorage(cart);                                                        // On ajoute un tableau d'objet au local storage.
   }}
   function populateStorage(cart){  
     localStorage.setItem("ours", JSON.stringify(cart)); 
   }
   function produitDejaCommande (id){
     let store = JSON.parse(localStorage.getItem("ours"));
-    function findid(storage) {
+    function findid(storage) {                                                    // On recherche en fonction de l'id si le produit à déjà été commandé.
       return storage.id == id;
     }
     let idd = store.find(findid);

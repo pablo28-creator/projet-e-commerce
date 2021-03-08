@@ -57,5 +57,8 @@ span{
     color: white;
 }
 .text{
-    font-size: 12;
+    font-size: 20px;
+}
+.titre{
+    font-size: 28px;
 }

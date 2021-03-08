@@ -29,15 +29,16 @@ function fillPanier(nounours){
       btnAchat.addEventListener("click", (event) =>                                                          // ajout d'un event au boutton pour envoyé les infos au serveur. 
        send(event)                                                                                                             
     )}; 
-      function send(event){     
-        let products = [];                                                                                 // fonction pour envoyer les infos au serveur.                                                             // on récupère toutes les clés du local.
+      function send(event){ 
+        if(validify("name") != true || validify("surname") != true || validify("adresse") != true || validify("city") != true || validify("mail") != true){
+          return event.stopPropagation();
+        };                                                                                  // fonction pour envoyer les infos au serveur.
+        let products = [];                                                              
         let local = JSON.parse(localStorage.getItem("ours"));
         for(let el of local){
           products.push(el.id); 
         };
-        if(myFunction("name") != true || myFunction("surname") != true || myFunction("adresse") != true || myFunction("city") != true || myFunction("mail") != true){
-          return event.stopPropagation();
-        };
+        
       let firstName = document.getElementById("name").value;                                         // on récupère toute les valeurs du form entrées par l'utilisateur.
       let lastName = document.getElementById("surname").value;
       let address = document.getElementById("adresse").value;
@@ -54,7 +55,7 @@ function fillPanier(nounours){
         fetch('http://localhost:3000/api/teddies/order', command)                                       
         .then(res => res.json())
         .catch(alert)                                                                         // on fait la requète avec fetch qui envoie nos infos au serveur.
-        .then(res => pageAchat(res));                                                                    // on passe la réponse du serveur dans une fonction.  
+        .then(res => pageAchat(res));                                                         // on passe la réponse du serveur dans une fonction.  
     };
     function validify(id) {
       if (document.getElementById(id).checkValidity()) {
