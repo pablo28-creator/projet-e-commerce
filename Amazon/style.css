@@ -33,6 +33,13 @@ footer a{
     color: white;
     box-shadow: 2px 2px 2px black ;  
 }
+@media (max-width: 500px) {
+    .btn{
+        width: 120px;
+        margin-left: 2em;
+    
+    }
+}
 .product img{
     height: 50%; 
 }

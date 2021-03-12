@@ -37,7 +37,7 @@ function afficherTeddy (teddy){                                       // fonctio
 
   let select = document.createElement("select");
   select.setAttribute("name","colors");
-  select.classList.add("ml-3");
+  select.classList.add("ml-5");
   divBorder.appendChild(select);
 
   Object.entries(teddy.colors).forEach(couleur => {             // on crée une liste déroulante avec pour option chaque couleurs du nounours.
